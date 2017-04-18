@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+  <meta charset="UTF-8">
+  <title>Седона</title>
+
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css">
+  <link href="css/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="main-container">
+
+  <ul class="main-nav">
+    <li>
+      <a href="hotels.html">Информация</a>
+    </li>
+    <li>
+      <a href="#">Фото и видео</a>
+    </li>
+    <li class="nav-logo">
+      <a href="#">
+        <img src="img/logo-header.png" width="138" height="70" alt="Главная">
+      </a>
+    </li>
+    <li>
+      <a href="#">Карта штата</a>
+    </li>
+    <li>
+      <a href="#">Гостиницы</a>
+    </li>
+  </ul>
+
+  <div class="title">
+    <img src="img/title-index.png" width="458" height="352" alt="">
+  </div>
+
+  <div class="hero">
+    <h1>Седона - небольшой городок в Аризоне, заслуживающий большего!</h1>
+
+    <p>Рассмотрим 5 причин, по которым Седона круче чем Гранд Каньон!</p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="feature feature-primary">
+        <h2>Настоящий городок</h2>
+
+        <span class="feature-number">№1</span>
+
+        <p>Седона не атракцион для туристов, там течет своя жизнь</p>
+      </div>
+    </div>
+    <div class="column-span">
+      <div class="feature-image">
+        <img src="img/img-feature-1.jpg" width="1600" height="800" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="feature feature-default">
+        <i class="feature-icon feature-icon-house"></i>
+
+        <h2>Жилье</h2>
+
+        <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="feature feature-default">
+        <i class="feature-icon feature-icon-food"></i>
+
+        <h2>Еда</h2>
+
+        <p>Всегда заказывай фирменный бургер. Вы не разочаруетесь!</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="feature feature-default">
+        <i class="feature-icon feature-icon-stuff"></i>
+
+        <h2>Сувениры</h2>
+
+        <p>Не только китайского, но и местного производства!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column-span">
+      <div class="feature-image">
+        <img src="img/img-feature-2.jpg" width="1600" height="800" alt="">
+      </div>
+    </div>
+    <div class="column">
+      <div class="feature feature-primary">
+        <h2>Там есть мост дьявола</h2>
+
+        <span class="feature-number">№2</span>
+
+        <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="search-modal-sheet">
+    <div class="row">
+      <div class="column">
+        <div class="feature feature-info">
+          <h2>Небольшая площадь</h2>
+
+          <span class="feature-number">№3</span>
+
+          <p>Все достопримеча&shy;тельности находятся очень близко</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="feature feature-info">
+          <h2>Красивая дорога</h2>
+
+          <span class="feature-number">№4</span>
+
+          <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="feature feature-info">
+          <h2>Мало туристов</h2>
+
+          <span class="feature-number">№5</span>
+
+          <p>Большинство едет в Гранд Каньон и толпится там</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero">
+      <h2 class="search-title">Заинтересовались?</h2>
+
+      <p>
+        Укажите предполагаемые даты поездки
+        и мы покажем вам лучшие предложения гостиниц в Седоне
+      </p>
+    </div>
+
+    <a class="btn btn-block btn-huge search-btn">Поиск гостиницы в Седоне</a>
+  </div>
+
+  <div class="search-container">
+    <div class="search-modal">
+      <form>
+        <p>
+          <label for="arrive">Дата заезда:</label>
+          <span class="control-date">
+            <input id="arrive" type="date" name="arrive">
+            <button class="control-btn"><i class="icon-calendar"></i></button>
+          </span>
+        </p>
+
+        <p>
+          <label for="departure">Дата выезда:</label>
+          <span class="control-date">
+            <input id="departure" type="date" name="departure">
+            <button class="control-btn"><i class="icon-calendar"></i></button>
+          </span>
+        </p>
+
+        <div class="age-input clearfix">
+          <p>
+            <label for="adults">Взрослые:</label>
+            <span class="control-number">
+              <button class="control-btn"><i class="icon-minus"></i></button>
+              <input id="adults" type="number" name="adults">
+              <button class="control-btn"><i class="icon-plus"></i></button>
+            </span>
+          </p>
+
+          <p>
+            <label for="kids">Дети:</label>
+            <span class="control-number">
+              <button class="control-btn"><i class="icon-minus"></i></button>
+              <input id="kids" type="number" name="kids">
+              <button class="control-btn"><i class="icon-plus"></i></button>
+            </span>
+          </p>
+        </div>
+        <input class="btn btn-primary btn-block btn-big" type="submit" value="Найти">
+      </form>
+    </div>
+  </div>
+
+  <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d837425.714287899!2d-112.32496310417743!3d34.92666629433277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872da132f942b00d%3A0x5548c523fa6c8efd!2z0KHQtdC00L7QvdCwLCDQkNGA0LjQt9C-0L3QsCA4NjMzNg!5e0!3m2!1sru!2s!4v1477424294283" width="100%" height="595" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+  <div class="row footer-row">
+    <div class="column">
+      <h2 class="footer-tag">#visitsedona</h2>
+    </div>
+    <div class="column">
+      <div class="social">
+        <a class="btn btn-primary" href="#">
+          <i class="icon-twitter"></i>
+        </a>
+        <a class="btn btn-primary" href="#">
+          <i class="icon-facebook"></i>
+        </a>
+        <a class="btn btn-primary" href="#">
+          <i class="icon-youtube"></i>
+        </a>
+      </div>
+    </div>
+    <div class="column">
+      <div class="copyright">
+        <p>
+          Website by
+          <a href="#">
+            <i class="copyright-icon"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="js/search-modal.min.js"></script>
+
+</body>
+</html>
