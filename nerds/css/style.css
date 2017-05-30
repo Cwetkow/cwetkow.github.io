@@ -681,6 +681,17 @@ legend {
     cursor: pointer;
 }
 
+.slider-controls label:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  border: #CACACA solid 1px;
+  border-radius: 50%;
+  margin: -4px -4px;
+}
+
 #slide-1:checked ~ .slider-controls label[for="slide-1"] { 
     background-color: #c1c1c1;
 }
