@@ -1,3 +1,6 @@
+
+/*----- Base -----*/
+
 body{
   min-width: 960px;
   margin: 0;
@@ -64,7 +67,7 @@ button{
   padding: 40px 0 45px;
 }
 
-/* header */
+/*----- Header -----*/
 
 .main-header{
   background-color: #000;
@@ -153,8 +156,8 @@ button{
 .login:hover:before{
   background-position: 0 -309px;
 }
-  
-/* breadcrumbs */
+
+/*---- Catalog breadcrumps ----*/
 
 .catalog .breadcrumbs{
   margin-bottom: 55px;
@@ -188,7 +191,7 @@ button{
   display: none;
 }
 
-/* index */
+/*----- Main Index -----*/
 
 .logo{
   width: 368px;
@@ -196,8 +199,6 @@ button{
   margin: 0 auto;
   margin-bottom: 20px;
 }
-
-/* features */
 
 .features-row{
   margin-bottom: 70px;
@@ -242,8 +243,6 @@ button{
   margin: 10px;
 }
 
-/* index-content */
-
 .index-content{
   background:
     url("../img/column-separator.png") no-repeat center,
@@ -277,8 +276,6 @@ button{
   margin: 0;
   margin-bottom: 35px;
 }
-
-/* news-preview */
 
 .news-preview{
   list-style: none;
@@ -324,7 +321,7 @@ button{
   background: #000;
 }
 
-/* gallery */
+/*---- Gallery Index ----*/
 
 .main-gallery{
   position: relative;
@@ -370,8 +367,8 @@ a.btn:last-of-type{
   width: 286px;
   height: 164px;
 }
+/*---- Gallery Index end ----*/
 
-/* main-contacts */
 
 .main-contacts p{
   margin-bottom: 25px;
@@ -381,7 +378,7 @@ a.btn:last-of-type{
   margin-bottom: 43px;
 }
 
-/* appointment-form */
+/*----- Form Index-----*/
 
 .appointment-form{
   width: 300px;
@@ -433,7 +430,7 @@ input[type="password"]::-moz-placeholder{
   background-color: #663d15;
 }
 
-/* catalog */
+/*----- Catalog -----*/
 
 .content-title{
   margin-bottom: 22px;
@@ -603,7 +600,7 @@ input:disabled + label:hover{
   background-color: #fff;
 }
 
-/* catalog-item */
+/*---- Catalog items grid ----*/
 
 .item-gallery{
   float: left;
@@ -700,7 +697,7 @@ input:disabled + label:hover{
   transform: rotate(45deg);
 }
 
-/* price */
+/*----- Price -----*/
 
 .price-content{
   padding-bottom: 30px;
@@ -806,7 +803,7 @@ input:disabled + label:hover{
   margin-bottom: 0;
 }
 
-/* login-form*/
+/*----- Login form -----*/
 
 .modal-content{
   display: none;
@@ -911,7 +908,7 @@ input:disabled + label:hover{
   vertical-align: top; 
 }
 
-/* map */
+/*----- Modal map -----*/
 
 .modal-content-map {
   display: none; 
@@ -926,8 +923,6 @@ input:disabled + label:hover{
   background: #e9e5dc url("../img/map.png");
   box-shadow: 0 30px 50px rgba(0,0,0,.7);
 }
-
-/* modal-content-show */
 
 @-webkit-keyframes move{
   0% {transform: translateY(-2000px);}
@@ -945,7 +940,7 @@ input:disabled + label:hover{
   animation: move 0.6s;
 }
 
-/* footer */
+/*----- Footer -----*/
 
 .main-footer,
 .inner-footer{
