@@ -1,0 +1,121 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$checked-icon-name: 'checked-icon'
+$checked-icon-x: 67px
+$checked-icon-y: 0px
+$checked-icon-offset-x: -67px
+$checked-icon-offset-y: 0px
+$checked-icon-width: 20px
+$checked-icon-height: 20px
+$checked-icon-total-width: 87px
+$checked-icon-total-height: 58px
+$checked-icon-image: '../img/sprite.png'
+$checked-icon: (67px, 0px, -67px, 0px, 20px, 20px, 87px, 58px, '../img/sprite.png', 'checked-icon', )
+$fb-icon-name: 'fb-icon'
+$fb-icon-x: 38px
+$fb-icon-y: 0px
+$fb-icon-offset-x: -38px
+$fb-icon-offset-y: 0px
+$fb-icon-width: 24px
+$fb-icon-height: 24px
+$fb-icon-total-width: 87px
+$fb-icon-total-height: 58px
+$fb-icon-image: '../img/sprite.png'
+$fb-icon: (38px, 0px, -38px, 0px, 24px, 24px, 87px, 58px, '../img/sprite.png', 'fb-icon', )
+$instagram-icon-name: 'instagram-icon'
+$instagram-icon-x: 29px
+$instagram-icon-y: 34px
+$instagram-icon-offset-x: -29px
+$instagram-icon-offset-y: -34px
+$instagram-icon-width: 23px
+$instagram-icon-height: 24px
+$instagram-icon-total-width: 87px
+$instagram-icon-total-height: 58px
+$instagram-icon-image: '../img/sprite.png'
+$instagram-icon: (29px, 34px, -29px, -34px, 23px, 24px, 87px, 58px, '../img/sprite.png', 'instagram-icon', )
+$login-icon-name: 'login-icon'
+$login-icon-x: 0px
+$login-icon-y: 0px
+$login-icon-offset-x: 0px
+$login-icon-offset-y: 0px
+$login-icon-width: 33px
+$login-icon-height: 29px
+$login-icon-total-width: 87px
+$login-icon-total-height: 58px
+$login-icon-image: '../img/sprite.png'
+$login-icon: (0px, 0px, 0px, 0px, 33px, 29px, 87px, 58px, '../img/sprite.png', 'login-icon', )
+$vk-icon-name: 'vk-icon'
+$vk-icon-x: 0px
+$vk-icon-y: 34px
+$vk-icon-offset-x: 0px
+$vk-icon-offset-y: -34px
+$vk-icon-width: 24px
+$vk-icon-height: 24px
+$vk-icon-total-width: 87px
+$vk-icon-total-height: 58px
+$vk-icon-image: '../img/sprite.png'
+$vk-icon: (0px, 34px, 0px, -34px, 24px, 24px, 87px, 58px, '../img/sprite.png', 'vk-icon', )
+$spritesheet-width: 87px
+$spritesheet-height: 58px
+$spritesheet-image: '../img/sprite.png'
+$spritesheet-sprites: ($checked-icon, $fb-icon, $instagram-icon, $login-icon, $vk-icon, )
+$spritesheet: (87px, 58px, '../img/sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)

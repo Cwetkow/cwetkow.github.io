@@ -1,0 +1,713 @@
+@import "fonts"
+@import "vars"
+@import "_mixins/px-to-em"
+@import "sprite"
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&subset=cyrillic,cyrillic-ext')
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+a 
+	text-decoration: none
+	&:hover, &:focus
+		text-decoration: none
+
+ul, li
+	list-style-type: none
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	font-family: 'Open Sans', sans-serif
+	font-weight: 400
+	overflow-x: hidden
+	opacity: 1
+
+
+.main-header 
+	position: relative
+	min-width: 420px
+	&__wrapper 
+		margin: 0 auto
+		padding:
+			top: 21px
+			bottom: 21px
+			right: 3%
+			left: 3%
+		max-width: 1200px
+		display: flex
+		justify-content: space-between
+	&__row 
+		display: flex
+		align-items: center
+		justify-content: space-between
+		&--left
+			width: 23%
+		&--right
+			width: 27%
+		@media(min-width: $screen-md) and (max-width: $screen-xl)
+			width: 30%
+		@media (max-width: $screen-md)
+			width: 50%
+			justify-content: flex-end
+	&__logo 
+		display: block
+		min-width: 128px
+		height: 19px
+	&__phone 
+		width: 70%
+		margin-right: 23%
+		text-align: center
+		background-color: $gold
+		padding:
+			top: 7px
+			bottom: 9px
+		border-radius: 10px
+		cursor: pointer
+		&:hover .main-header__phone-number 
+			border-bottom: none
+		@media(min-width: $screen-md) and (max-width: $screen-xl)
+			margin-right: 10%
+		@media (max-width: $screen-md)
+			display: none
+	&__phone-number
+		font-size: 1em
+		color: #212121
+		text-decoration: none
+		border-bottom: 1px dashed #212121
+	&__login 
+		display: block
+		margin-top: -1px
+		&:before
+			content: ""
+			display: block
+			+sprite($login-icon)
+
+.promo
+	background: 
+		image: url("../img/main-banner.png")
+		size: cover
+		repeat: no repeat
+		position: center
+	&__wrapper
+		margin: 0 auto
+		padding:
+			left: 3%
+			right: 3%
+			top: 0
+			bottom: 280px
+	&__title
+		text-align: center
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		padding-top: 55px
+		margin: 0
+		line-height: 0.8
+		letter-spacing: 3px
+		@media (max-width: $screen-sm)
+			font-size: em(42)
+			font-weight: 400
+	&__subtitle
+		font-weight: 400
+		text-align: center
+		font-size: em(24)
+		padding: 0 0 50px
+		@media (max-width: $screen-sm)
+			font-size: em(20)
+	&__btn
+		display: block
+		margin: 0 auto
+		width: 30%
+		text-align: center
+		padding: 20px 0
+		font-size: em(26)
+		font-weight: 100
+		color: #212121
+		text-decoration: none
+		text-transform: uppercase
+		border: 1px solid #212121
+		border-radius: 10px
+		&:hover
+			border: 1px solid #FF7100
+			color: #FF7100
+		@media (max-width: $screen-xl) and (min-width: $screen-md)
+			width: 45%
+			font-size: em(20)
+		@media (max-width: $screen-md)
+			width: 70%
+			font-size: em(20)
+
+.steps
+	&__wrapper
+		margin: 0 auto
+		padding:
+			left: 3%
+			right: 3%
+			top: 55px
+			bottom: 92px
+		max-width: 1079px
+	&__list
+		display: flex
+		justify-content: space-around
+		margin: 0
+		padding: 0
+		position: relative
+		&::before
+			position: absolute
+			display: block
+			left: 140px
+			top: 65px
+			content: ""
+			width: 75%
+			height: 0
+			border-top: 5px dashed $gold
+		@media (max-width: $screen-md)
+			flex-wrap: wrap
+			justify-content: space-around
+			padding: 0 3px
+			&::before
+				display: none
+		@media (max-width: $screen-sm)
+			flex-wrap: wrap
+
+.step
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 140px
+	text-align: center
+	@media (max-width: $screen-md)
+		min-width: 215px
+		&:nth-child(-n+2)
+			padding-bottom: 50px
+	@media (max-width: $screen-sm)
+		padding-bottom: 50px
+		&:last-child
+			padding-bottom: 0
+	&__icon
+		display: block
+		width: 130px
+		height: 130px
+		margin-bottom: 25px
+		border-radius: 50%
+		border: 5px solid $gold
+		background-color: #fff
+		z-index: 2
+		background:
+			image: url("../img/step-download.png")
+			repeat: no-repeat
+			position: center
+		&--design
+			background-image: url("../img/step-design.png")
+		&--pay
+			background-image: url("../img/step-pay.png")
+		&--get
+			background-image: url("../img/step-get.png")
+	&__title
+		font-size: em(24)
+		@media (max-width: $screen-md)
+			font-size: em(19)
+			font-weight: bold
+
+.advantage
+	background-color: #f3f0e7
+	&__wrapper
+		max-width: 1079px
+		padding:
+			left: 2%
+			right: 2%
+			top: 1px
+			bottom: 75px
+		margin: 0 auto
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		text-align: center
+		letter-spacing: 4px
+		font-variant: small-caps
+		margin-bottom: 60px
+	&__list
+		display: flex
+		justify-content: space-between
+		padding: 0
+		margin: 0
+		text-align: center
+		@media (max-width: $screen-xl)
+			flex-wrap: wrap
+			justify-content: space-around
+	&__btn
+		display: block
+		margin: 0 auto
+		margin-top: 80px
+		max-width: 39%
+		text-align: center
+		font-size: em(26)
+		text-decoration: none
+		text-transform: uppercase
+		font-weight: 100
+		padding: 18px 0
+		color: #ffffff
+		background-color: $button
+		letter-spacing: 1px
+		border-radius: 10px
+		transition: All 0.5s ease
+		&:hover
+			background-color: darken($button, 10%)
+		@media (max-width: $screen-lg)
+			min-width: 45%
+			font-size: em(23)
+		@media (max-width: $screen-md)
+			min-width: 65%
+		@media (max-width: $screen-sm)
+			min-width: 70%
+		&--info
+			margin-top: 75px
+			@media (max-width: $screen-sm)
+				min-width: 305px
+
+.advantage-item
+	display: flex
+	flex-direction: column
+	align-items: center
+	max-width: 267px
+	@media (max-width: $screen-xl)
+		margin:
+			right: 40px
+			bottom: 70px
+		&:last-child
+			margin-bottom: 0
+	@media (max-width: $screen-md)
+		margin:
+			top: 0
+			left: 40px
+			right: 40px
+	&__title
+		font-size: em(24)
+		font-weight: 400
+		line-height: 1.25
+	&__text
+		font-size: em(16)
+		line-height: 1.25
+		margin: 0
+
+.solutions
+	&__wrapper
+		max-width: 1079px
+		padding: 
+			top: 70px
+			left: 3%
+			right: 3%
+			bottom: 115px
+		margin: 0 auto
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		letter-spacing: 4px
+		text-align: center
+		margin: 0
+		padding-bottom: 70px
+	&__prices
+		margin: 0
+		padding: 0
+		display: flex
+		justify-content: space-between
+		@media (max-width: $screen-lg)
+			flex-wrap: wrap
+			justify-content: space-around
+
+.price
+	border: 5px solid $gold
+	border-radius: 10px
+	width: 30%
+	position: relative
+	@media (max-width: $screen-lg)
+		width: 40%
+		margin-bottom: 70px
+		&:last-child
+			margin-bottom: 0
+	@media (max-width: $screen-md)
+		width: 80%
+		margin: 0 20% 70px
+	&__flag 
+		position: absolute
+		top: -25px
+		left: 17%
+		display: flex
+		justify-content: center
+		align-items: flex-end
+		width: 66%
+		height: 30px
+		background-color: $gold
+		font-size: em(18)
+		font-weight: bold
+		color: #e11a27
+		text-transform: uppercase
+		&::after
+			content: ""
+			position: absolute
+			top: 0
+			left: 0
+			border:
+				top: 20px solid #fff
+				right: 20px solid $gold
+		&::before 
+			content: ""
+			position: absolute
+			top: 0
+			right: 0
+			border:
+				top: 20px solid #fff
+				left: 20px solid $gold
+	&__link
+		height: 100%
+	&__wrapper
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding-top: 20px
+		min-height: 254px
+	&__list
+		margin: 0
+		padding:
+			left: 20px
+			right: 20px
+		color: #000
+		font-size: em(18)
+		font-weight: 600
+	&__item
+		position: relative
+		margin:
+			bottom: 13px
+			left: 40px
+		&:before
+			content: ""
+			position: absolute
+			display: block
+			+sprite($checked-icon)
+			left: -37px
+	&__name
+		text-align: center
+		font-size: em(36)
+		font-variant: small-caps
+		letter-spacing: 3px
+		color: #000
+		background-color: $gold
+		margin: 0
+		padding:
+			top: 30px
+			bottom: 30px
+	&__value
+		display: block
+		text-align: center
+		font-size: em(60)
+		color: #000
+	&__btn
+		display: block
+		background-color: $gold
+		text-align: center
+		padding:
+			top: 10px
+			bottom: 10px
+		margin-top: 10px
+		font-size: em(22)
+		font-weight: 100
+		color: #000
+
+.testimonials
+	min-width: 430px
+	background:
+		color: #f5eee4
+		image: url(../img/main-banner2.png)
+		size: 100% 100%
+		repeat: no-repeat
+		position: right
+	@media (max-width: $screen-lg)
+		background-image: none
+	&__wrapper
+		padding:
+			left: 3%
+			right: 3%
+			bottom: 50px
+		margin: 0 auto
+		max-width: 1079px
+	&__title
+		font-size: em(60)
+		font-weight: 100
+		font-variant: small-caps
+		margin: auto
+		padding:
+			top: 30px
+			bottom: 45px
+		@media (max-width: $screen-lg)
+			text-align: center
+	&__user
+		max-width: 500px
+		display: flex
+		align-items: center
+		@media (max-width: $screen-lg)
+			width: 70%
+			margin: 0 auto
+			padding-bottom: 30px
+	&__user-avatar
+		margin-right: 30px
+		@media (max-width: $screen-lg)
+			width: 30%
+	&__user-name
+		font-size: em(30)
+		margin: 0 0 10px 5px
+		@media (max-width: $screen-lg)
+			font-size: em(24)
+	&__user-job
+		font-size: em(18)
+		margin-top: 5px
+		@media (max-width: $screen-lg)
+			font-size: em(16)
+	&__text
+		width: 50%
+		@media (max-width: $screen-lg)
+			width: 500px
+			margin: 0 auto 20px
+		@media (max-width: $screen-md)
+			width: 70%
+	&__next
+		margin:
+			top: 35px
+			bottom: 130px
+			left: 33%
+		position: relative
+		display: block
+		width: 165px
+		color: #000
+		&::after
+			content: ""
+			position: absolute
+			background: url(../img/next-arrow.svg) no-repeat
+			width: 26px
+			height: 3px
+			top: 8px
+			right: 0px
+		@media (max-width: $screen-lg)
+			width: 160px
+			margin:
+				top: 55px
+				left: auto
+				right: auto
+				bottom: 100px
+	&__btn
+		display: block
+		width: 40%
+		text-align: center
+		padding: 20px 0
+		font-size: em(26)
+		font-weight: 100
+		color: #212121
+		text-decoration: none
+		text-transform: uppercase
+		border: 1px solid #212121
+		border-radius: 10px
+		margin-left: 2em
+		&:hover
+			border: 1px solid #FF7100
+			color: #FF7100
+		@media (max-width: $screen-lg)
+			width: 330px
+			margin:
+				left: auto
+				right: auto
+
+.info
+	&__wrapper
+		padding:
+			top: 90px
+			bottom: 120px
+		margin: 0 auto
+		max-width: 1079px
+	&__list
+		margin: 0
+		padding: 0
+		display: flex
+		justify-content: space-between
+		@media (max-width: $screen-xl)
+			flex-wrap: wrap
+			justify-content: space-around
+	&__title
+		border-top-left-radius: 10px
+		border-top-right-radius: 10px
+		background-color: $gold
+		text-align: center
+		margin: 0
+		font-size: em(36)
+		font-weight: 100
+		padding: 15px 0
+		font-variant: small-caps
+		margin-bottom: 6px
+
+.info-terms
+	width: 30%
+	@media (max-width: $screen-xl)
+		width: 35%
+		margin-bottom: 70px
+	@media (max-width: $screen-md)
+		width: 55%
+	@media (max-width: $screen-sm)
+		width: 67%
+	&__content
+		background-color: #f7f0e6
+		border-bottom-left-radius: 10px
+		border-bottom-right-radius: 10px
+		padding: 30px 36px 0
+		min-height: 236px
+	&__content-text
+		margin: 0
+		padding-bottom: 10px
+
+.info-payment
+	width: 30%
+	@media (max-width: $screen-xl)
+		width: 35%
+		margin-bottom: 70px
+	@media (max-width: $screen-md)
+		width: 55%
+	@media (max-width: $screen-sm)
+		width: 67%
+	&__wrap
+		@extend .info-terms__content
+	&__list
+		padding:
+			top: 12px
+			left: 30px
+	&__list-item
+		list-style-type: disc
+		padding-bottom: 12px
+
+.info-shipping
+	width: 30%
+	@media (max-width: $screen-xl)
+		width: 35%
+	@media (max-width: $screen-md)
+		width: 55%
+	@media (max-width: $screen-sm)
+		width: 67%
+	&__wrap
+		@extend .info-terms__content
+	&__text
+		margin: 0
+		padding-bottom: 10px
+		&--attention
+			font-size: em(18)
+			font-weight: bold
+			color: $button
+			font-variant: small-caps
+
+.main-footer
+	background-color: $gold
+	&__wrapper
+		padding:
+			top: 50px
+			bottom: 50px
+		max-width: 1079px
+		margin: 0 auto
+	&__inner
+		display: flex
+		justify-content: space-between
+		margin-bottom: 35px
+		@media (max-width: $screen-xl)
+			padding:
+				left: 3%
+				right: 3%
+			flex-wrap: wrap
+			flex-direction: column
+	&__container
+		display: flex
+		@media (max-width: $screen-xl)
+			margin: 0 auto
+			padding-bottom: 70px
+		@media (max-width: $screen-md)
+			width: 90%
+		@media (max-width: $screen-sm)
+			flex-wrap: wrap
+			text-align: center
+	&__list
+		margin: 0 80px 0 0
+		padding: 28px 0 0 0
+		width: 150px
+		border-top: 2px solid #000
+		&:last-child
+			margin-right: 0
+		@media (max-width: $screen-md)
+			margin-right: 10%
+		@media (max-width: $screen-sm)
+			width: 51%
+			margin: 0 auto
+			margin-bottom: 40px
+			&:last-child
+				margin: 0 auto
+	&__list-item
+		margin: 0
+		padding-bottom: 13px
+	&__list-link
+		color: #000
+		font-size: em(18)
+		font-weight: bold
+		&:hover
+			border-bottom: 1px solid #000
+		&--caps
+			font-variant: small-caps
+	&__copyright
+		display: block
+		text-align: center
+		font-weight: bold
+		font-size: em(14)
+	&__social
+		@media (max-width: $screen-xl)
+			margin: 0 auto
+			display: flex
+			flex-direction: column
+
+.social
+	&__list
+		width: 150px
+		border-top: 2px solid #000
+		margin: 0
+		padding: 28px 0 0 0
+		display: flex
+		@media (max-width: $screen-xl)
+			justify-content: space-around
+	&__item
+		margin:
+			right: 20px
+			bottom: 50px
+		&:hover
+			cursor: pointer
+		@media (max-width: $screen-xl)
+			&:last-child
+				margin-right: 0
+		&--facebook
+			+sprite ($fb-icon)
+		&--vk
+			+sprite ($vk-icon)
+		&--instagram
+			+sprite ($instagram-icon)
+
+@media (max-width: $screen-xl)
+	.copyright__logo
+		margin: 0 auto
+
+.hamburger 
+	width: 25px
+	height: 18px
+	position: relative
+	margin-right: 23%
