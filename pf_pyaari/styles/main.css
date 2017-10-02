@@ -135,7 +135,7 @@ video {
 }
 
 section#content {
-  padding-bottom: 194px;
+  padding-bottom: 150px;
 }
 
 section#content .strong {
@@ -269,10 +269,10 @@ section#content #our-work ul li {
   height: 359px;
   width: 530px;
   position: relative */
-      margin: 90px 30px 140px;
-    height: 317px;
-    width: 557px;
-    position: relative;
+  margin: 90px 30px 159px;
+  height: 317px;
+  width: 557px;
+  position: relative;
 }
 
 section#content #our-work ul li a {
@@ -659,7 +659,7 @@ nav#toc a#toc-actuator {
 .title-tt {
   font-size: 40px;
   top: -13%;
-  left: 13%;
+  left: 22%;
   position: absolute;
 }
 
@@ -677,6 +677,12 @@ nav#toc a#toc-actuator {
   position: absolute;
 }
 
+.title-ph {
+  font-size: 40px;
+  top: -13%;
+  width: 101%;
+  position: absolute;
+}
 
 /*----- tested -----*/
 #our-work ul li a:hover:after {
@@ -695,10 +701,6 @@ nav#toc a#toc-actuator {
 
 .text-pink {
   color: #E4009C;
-}
-
-.text-red {
-  color: #D3040B;
 }
 
 .div-one {
@@ -778,6 +780,11 @@ header .btn-git:hover {
 
 header .btn-git:active {
   background-color: #49306B;
+}
+
+.no-see {
+  font-size: 16px;
+  margin-left: 15px;
 }
 
 .sedona768 {
